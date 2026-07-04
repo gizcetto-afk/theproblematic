@@ -435,7 +435,7 @@ body.landing-on .apparatus__idx .sep{ display:none; }
 .colo__anchor{ position:absolute; top:0; left:0; }
 .colo__mail{ display:block; width:fit-content; max-width:1080px; margin:0 auto; font-family:var(--serif); font-weight:300; font-size:clamp(0.95rem,1rem + 0.6vw,1.25rem); letter-spacing:-0.01em; color:var(--graphite); border-bottom:1px solid transparent; transition:border-color .4s var(--ease); }
 .colo__mail:hover{ border-color:var(--stone); }
-.colo__foot{ max-width:1080px; margin:clamp(2.8rem,7vh,4.5rem) auto 0; display:flex; flex-wrap:wrap; gap:0.8rem 1.8rem; border-top:1px solid var(--line-faint); padding-top:1.4rem; font-family:var(--grotesk); font-size:0.56rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--stone); }
+.colo__foot{ max-width:1080px; margin:clamp(2.8rem,7vh,4.5rem) auto 0; display:flex; flex-wrap:wrap; justify-content:center; text-align:center; gap:0.8rem 1.8rem; border-top:1px solid var(--line-faint); padding-top:1.4rem; font-family:var(--grotesk); font-size:0.56rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--stone); }
 .colo__foot a{ color:var(--stone); border-bottom:1px solid transparent; transition:color .4s var(--ease); }
 .colo__foot a:hover{ color:var(--grey); }
 /* center landing modules */
@@ -459,6 +459,25 @@ body.landing-on .apparatus__idx .sep{ display:none; }
 .practice__list{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.7rem 2.4rem; max-width:960px; }
 .practice__list li{ font-family:var(--serif); font-weight:300; font-size:clamp(1.15rem,1rem + 0.7vw,1.5rem); color:var(--grey); }
 @keyframes ulbob{ 0%,100%{ transform:translate(-50%,0); } 50%{ transform:translate(-50%,5px); } }
+
+/* ===== mobile refinements v1 (desktop unchanged) ===== */
+@media (max-width:768px){
+  .apparatus{ padding:0.7rem var(--edge); gap:0.6rem; }
+  .apparatus__mark{ font-size:0.66rem; letter-spacing:0.11em; }
+  .apparatus__idx{ gap:0.95rem; }
+  .apparatus__idx a{ font-size:0.62rem; letter-spacing:0.09em; }
+  .reel__track{ justify-content:flex-start; }
+  .reel__track img{ height:clamp(4.6rem,16vw,6.2rem); }
+  .colo__foot{ justify-content:center; text-align:center; }
+  .colo__mail{ text-align:center; }
+}
+@media (max-width:480px){
+  .apparatus__mark span{ display:none; }
+  .apparatus__idx{ gap:0.75rem; }
+  .apparatus__idx a{ font-size:0.58rem; letter-spacing:0.07em; }
+  .lab__reel{ -webkit-mask-image:none; mask-image:none; }
+  .colo__foot{ flex-direction:column; align-items:center; gap:0.5rem; }
+}
 </style>
 </head>
 <body>
@@ -831,5 +850,6 @@ body.landing-on .apparatus__idx .sep{ display:none; }
 })();
 </script>
 <script>/*logo->landing*/(function(){var mk=document.querySelector(".apparatus__mark");if(!mk)return;mk.addEventListener("click",function(e){e.preventDefault();var ov=document.getElementById("unlearn");if(ov){ov.scrollTop=0;}else{location.reload();}});})();</script>
+<script>/*work-hash-dismiss*/(function(){if(/^#work-[1-4]$/.test(location.hash||"")){var o=document.getElementById("unlearn");if(o&&o.parentNode)o.parentNode.removeChild(o);document.body.classList.remove("landing-on");var t=document.querySelector(location.hash);if(t)setTimeout(function(){t.scrollIntoView();},40);}})();</script>
 </body>
 </html>

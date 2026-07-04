@@ -434,7 +434,7 @@ body.landing-on .apparatus__idx .sep{ display:none; }
 .colo__anchor{ position:absolute; top:0; left:0; }
 .colo__mail{ display:block; width:fit-content; max-width:1080px; margin:0 auto; font-family:var(--serif); font-weight:300; font-size:clamp(0.95rem,1rem + 0.6vw,1.25rem); letter-spacing:-0.01em; color:var(--graphite); border-bottom:1px solid transparent; transition:border-color .4s var(--ease); }
 .colo__mail:hover{ border-color:var(--stone); }
-.colo__foot{ max-width:1080px; margin:clamp(2.8rem,7vh,4.5rem) auto 0; display:flex; flex-wrap:wrap; gap:0.8rem 1.8rem; border-top:1px solid var(--line-faint); padding-top:1.4rem; font-family:var(--grotesk); font-size:0.56rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--stone); }
+.colo__foot{ max-width:1080px; margin:clamp(2.8rem,7vh,4.5rem) auto 0; display:flex; flex-wrap:wrap; justify-content:center; text-align:center; gap:0.8rem 1.8rem; border-top:1px solid var(--line-faint); padding-top:1.4rem; font-family:var(--grotesk); font-size:0.56rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--stone); }
 .colo__foot a{ color:var(--stone); border-bottom:1px solid transparent; transition:color .4s var(--ease); }
 .colo__foot a:hover{ color:var(--grey); }
 /* center landing modules */
@@ -464,6 +464,39 @@ body.landing-on .apparatus__idx .sep{ display:none; }
 .practice__diagram svg{ width:100%; height:auto; display:block; }
 #pdiag .hub{ font-family:var(--grotesk); font-weight:600; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; fill:var(--graphite); }
 #pdiag .conn{ stroke-width:0.6; opacity:0.3; }
+
+/* ===== mobile refinements v1 (desktop unchanged) ===== */
+@media (max-width:768px){
+  .apparatus{ padding:0.7rem var(--edge); gap:0.6rem; }
+  .apparatus__mark{ font-size:0.66rem; letter-spacing:0.11em; }
+  .apparatus__idx{ gap:0.95rem; }
+  .apparatus__idx a{ font-size:0.62rem; letter-spacing:0.09em; }
+  .reel__track{ justify-content:flex-start; }
+  .reel__track img{ height:clamp(4.6rem,16vw,6.2rem); }
+  .colo__foot{ justify-content:center; text-align:center; }
+  .colo__mail{ text-align:center; }
+}
+@media (max-width:480px){
+  .apparatus__mark span{ display:none; }
+  .apparatus__idx{ gap:0.75rem; }
+  .apparatus__idx a{ font-size:0.58rem; letter-spacing:0.07em; }
+  .lab__reel{ -webkit-mask-image:none; mask-image:none; }
+  .colo__foot{ flex-direction:column; align-items:center; gap:0.5rem; }
+}
+
+/* ===== practice mobile ===== */
+@media (max-width:768px){
+  .practice{ padding:clamp(5.5rem,12vh,7rem) var(--edge) clamp(3rem,8vh,4.5rem); }
+  .practice__diagram{ max-width:min(92vw,460px); margin-bottom:clamp(2rem,6vh,3rem); }
+  #pdiag text{ font-size:8.5px; }
+  #pdiag .hub{ font-size:9.5px; }
+  .practice__list{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0.7rem 1rem; max-width:22rem; margin-left:auto; margin-right:auto; }
+  .practice__list li{ text-align:center; }
+}
+@media (max-width:400px){
+  .practice__diagram{ max-width:94vw; }
+  .practice__list{ grid-template-columns:1fr; max-width:16rem; }
+}
 </style>
 </head>
 <body>
@@ -472,7 +505,7 @@ body.landing-on .apparatus__idx .sep{ display:none; }
   <a class="apparatus__mark" href="index.html">The&nbsp;Problematic <span>&middot; Milano</span></a>
   <span class="apparatus__state">Practice</span>
   <nav class="apparatus__idx" aria-label="Contents">
-    <a href="index.html" class="txt">Selected Works</a>
+    <a href="index.html#work-1" class="txt">Selected Works</a>
     <a href="#contact" class="txt">Contact</a>
   </nav>
 </header>
