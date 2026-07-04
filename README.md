@@ -1,22 +1,10 @@
-# The Problematic — Website
+# The Problematic
 
-Independent multidisciplinary design practice, Milan.
+Independent multidisciplinary design practice - Milan.
 
-## Structure
-```
-the-problematic/
-├── index.html      # Frontispiece / landing (lab)
-├── works.html      # Selected works
-├── practice.html   # Practice + diagram
-├── contact.html    # Contact
-├── css/style.css   # All styles
-├── js/script.js    # All behavior
-└── assets/         # images, icons, logo.svg
-```
+## Files
+- `index.html` - full site (landing, selected works, colophon). Self-contained.
+- `practice.html` - practice page.
 
-## Deploy
-Static site — no build step.
-- **Vercel:** import the repo (or drag this folder into the Vercel dashboard). It serves `index.html` automatically.
-- **GitHub:** push this folder as the repo root, then connect it to Vercel.
-
-Every page links CSS/JS via relative paths; no inline CSS or JS.
+## Deploy (Vercel / GitHub)
+Static, no build step. Put both files at the repo root and connect to Vercel; `index.html` is served automatically.
