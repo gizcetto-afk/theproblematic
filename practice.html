@@ -505,6 +505,14 @@ body.landing-on .apparatus__idx .sep{ display:none; }
   .practice__diagram{ max-width:94vw; }
   .practice__list{ gap:0.6rem 1.1rem; }
 }
+
+/* ===== landing: reading + timeline side by side (option A) ===== */
+@media (max-width:900px){
+  .lab__grid{ display:grid; grid-template-columns:1fr 1fr; column-gap:1.3rem; }
+  .lab__grid .mod{ grid-column:1 / -1; }
+  .lab__grid .mod:nth-of-type(2){ grid-column:1 / 2; }
+  .lab__grid .mod:nth-of-type(3){ grid-column:2 / 3; align-self:start; }
+}
 </style>
 </head>
 <body>
