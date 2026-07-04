@@ -486,6 +486,19 @@ body.landing-on .apparatus__idx .sep{ display:none; }
 @media (max-width:360px){
   .lab__grid{ grid-template-columns:1fr; grid-auto-rows:auto; }
 }
+
+/* ===== works mobile v3 ===== */
+@media (max-width:900px){
+  .work__plate{ width:100%; max-width:34rem; margin-left:auto; margin-right:auto; }
+  .work__cap{ text-align:center; max-width:34rem; margin-left:auto; margin-right:auto; }
+  .work__no{ text-align:center; }
+  .see{ margin-left:auto; margin-right:auto; }
+  .doc.doc--acc{ padding-top:2.8rem; }
+  .commgal{ flex-direction:row; flex-wrap:nowrap; justify-content:flex-start; align-items:stretch; height:auto; gap:0.7rem; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:0.4rem; }
+  .commgal::-webkit-scrollbar{ display:none; }
+  .commgal .billboard-img{ height:auto; width:auto; max-width:84%; max-height:none; flex:0 0 auto; object-fit:contain; scroll-snap-align:center; }
+}
+@media (max-width:520px){ .commgal .billboard-img{ max-width:88%; } }
 </style>
 </head>
 <body>
@@ -858,6 +871,6 @@ body.landing-on .apparatus__idx .sep{ display:none; }
 })();
 </script>
 <script>/*logo->landing*/(function(){var mk=document.querySelector(".apparatus__mark");if(!mk)return;mk.addEventListener("click",function(e){e.preventDefault();var ov=document.getElementById("unlearn");if(ov){ov.scrollTop=0;}else{if(location.hash){history.replaceState(null,"",location.pathname);}location.reload();}});})();</script>
-<script>/*work-hash-dismiss*/(function(){if(/^#work-[1-4]$/.test(location.hash||"")){var o=document.getElementById("unlearn");if(o&&o.parentNode)o.parentNode.removeChild(o);document.body.classList.remove("landing-on");var t=document.querySelector(location.hash);if(t)setTimeout(function(){t.scrollIntoView();},40);}})();</script>
+<script>/*work-hash-dismiss*/(function(){if(!/^#work-[1-4]$/.test(location.hash||""))return;function reveal(){var o=document.getElementById("unlearn");if(o&&o.parentNode)o.parentNode.removeChild(o);document.body.classList.remove("landing-on");document.documentElement.style.overflow="";document.body.style.overflow="";}reveal();var t=document.querySelector(location.hash);setTimeout(function(){reveal();if(t)t.scrollIntoView();},80);})();</script>
 </body>
 </html>
